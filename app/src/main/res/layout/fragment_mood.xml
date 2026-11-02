@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <!---->
     <!-- Текст начальный -->
     <TextView
         android:id="@+id/txtGreetings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Проведи пальцем"
-
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/mood_greeting"
+        app:layout_constraintBottom_toTopOf="@id/txtScrollBar_Number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293" />
+        app:layout_constraintVertical_bias="0.65" />
 
-    <!-- Текст полученной из seekBar цифры -->
+    <!-- Текст полученной из Slider цифры -->
     <TextView
         android:id="@+id/txtScrollBar_Number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-
-        android:text="(тут будет цифра)"
+        android:layout_marginBottom="12dp"
+        android:labelFor="@id/seekBar"
+        android:text="@string/mood_score_default"
+        app:layout_constraintBottom_toTopOf="@id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtGreetings" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Текст описание дня -->
-    <EditText
-        android:id="@+id/txtDescribeDay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:hint="(Hе обязательно)\nМожешь написать как он прошёл..."
-
-        android:text=""
+    <!-- Слайдер / Slider: оценка от -10 до +10 -->
+    <com.google.android.material.slider.Slider
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="20dp"
+        android:contentDescription="@string/mood_slider_description"
+        android:stepSize="1.0"
+        android:value="0.0"
+        android:valueFrom="-10.0"
+        android:valueTo="10.0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSaveResult" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
 
     <!-- Кнопка сохранить результат -->
     <Button
@@ -53,29 +52,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-
-        android:text="Button"
+        android:text="@string/mood_save_result"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/seekBar" />
 
-    <!-- Слайдер / seekBar -->
-    <com.google.android.material.slider.Slider
-        android:id="@+id/seekBar"
-        android:layout_width="408dp"
-        android:layout_height="64dp"
-        android:stepSize="1.0"
-        android:value="0.0"
-        android:valueFrom="-10.0"
-        android:valueTo="10.0"
-        app:layout_constraintBottom_toBottomOf="parent"
-
+    <!-- Необязательное текстовое описание дня -->
+    <EditText
+        android:id="@+id/txtDescribeDay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="48dp"
+        android:gravity="top|start"
+        android:hint="@string/mood_optional_note"
+        android:inputType="textCapSentences|textMultiLine"
+        android:maxLines="30"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
-
+        app:layout_constraintTop_toBottomOf="@id/btnSaveResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

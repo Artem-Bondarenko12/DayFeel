@@ -22,6 +22,7 @@ class MainActivity : FragmentActivity() {
         enableEdgeToEdge() // запускаем приложение
         setContentView(R.layout.activity_main) // первое открытое окно
 
+        // Запускаем действительно рабочую программу (привет как день + кнопка отметь день)
         if(savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, HomeFragment())

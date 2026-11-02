@@ -1,3 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DayFeel</string>
+
+    <!-- fragment_mood.xml -->
+    <string name="home_greeting">Рад тебя видеть! Как прошёл твой день?</string>
+    <string name="home_rate_day">Поставить оценку дня</string>
+    <string name="home_calendar">Посмотреть календарь</string>
+
+    <!-- fragment_home.xml -->
+    <string name="mood_greeting">Проведи пальцем по слайдеру</string>
+    <string name="mood_score_default">0</string>
+    <string name="mood_slider_description">Оценка дня от минус десяти до плюс десяти</string>
+    <string name="mood_save_result">Сохранить оценку</string>
+    <string name="mood_optional_note">(Не обязательно)\nМожешь написать, как он прошёл...</string>
+
+    <!-- fragment_success.xml -->
+    <string name="success_exit">Закрыть приложение</string>
+    <string name="success_сongrats">Поздравляю!\nРезультат сохранён!</string>
 </resources>
