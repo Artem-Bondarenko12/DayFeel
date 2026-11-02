@@ -5,11 +5,22 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!---->
+    <!--  Независимый текст (приветствие) -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рад тебя видеть! Как прошёл твой день?"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.314" />
+
 
     <!--  Кнопка (при входе) чтобы оценить день  -->
-
-    <!--  Кнопка (при входе) чтобы открыть календарь  -->
-
     <Button
         android:id="@+id/btnRateDay"
         android:layout_width="wrap_content"
@@ -23,6 +34,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.676" />
 
+
+        <!--  Кнопка (при входе) чтобы открыть календарь  -->
     <Button
         android:id="@+id/btnCalendar"
         android:layout_width="wrap_content"
@@ -34,17 +47,4 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnRateDay" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Рад тебя видеть! Как прошёл твой день?"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
